@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Задание 6</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script>
+var u1 = 0;
+var u2 = 0;
+var u3 = 0;
+
+function q1(){
+u1 = u1+1;
+}
+
+function q2(){
+u2 = u2+1;
+}
+
+function q3(){
+u3 = u3+1;
+}
+
+function result(){
+var rez = u1+u2+u3;
+var u1_pct = Math.round((u1/rez)*100);
+var u2_pct = Math.round((u2/rez)*100);
+var u3_pct = Math.round((u3/rez)*100);
+$("#r").html("Всего проголосовало: "+rez);
+$("#u_1").html("За Барселонe проголосовало: "+u1_pct+"%");
+$("#u_2").html("За Реал мадрид проголосовало: "+u2_pct+"%");
+$("#u_3").html("За Ювентус проголосовало: "+u3_pct+"%");
+}
+</script>
+
+<style type="text/css">
+	img{
+		height: 100px;
+		width: 100px;
+	}
+</style>
+
+</head>
+<body>
+	<form>
+		<h2><strong>Твой любимый футбольный клуб?</strong></h2></br>
+		<img src="img/1200px-FC_Barcelona.svg.png" alt="1">
+		<input class="button" type="button" onclick="q1()" id="rad1" value="Барселона"></br>
+		<img src="img/Real_Madrid.png" alt="2">
+		<input class="button" type="button" onclick="q2()" id="rad2" value="Реал мадрид"></br>
+		<img src="img/34STI-JUVENTUS-Sticker.jpg" alt="3">
+		<input class="button" type="button" onclick="q3()" id="rad3" value="Ювентус"></br></br>
+		<input class="result" type="button" id="rez" onclick="result()" value="Результаты">
+		<p id="r"></p>
+		<p id="u_1"></p>
+		<p id="u_2"></p>
+		<p id="u_3"></p>
+	</form>
+<a href="index.html">Список заданий</a>
+</body>
+</html>

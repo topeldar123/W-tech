@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Задание 1</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script type="text/javascript">
+	function buttonC(){
+	var a =["#FF0000","#FF4500","#FF69B4","#FFD700","#00FF00","#00FF7F","#7B68EE","#A9A9A9"];
+	var color = a[Math.floor(Math.random()*a.length)];
+	$("body").css("backgroundColor",color);
+}
+	</script>
+</head>
+<body>
+	<input type="button" id="button" onclick="buttonC()" value="Смена цвета фона" >
+<a href="index.html">Список заданий</a>
+</body>
+</html>

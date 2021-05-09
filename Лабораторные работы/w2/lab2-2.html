@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Задание 2</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script type="text/javascript">
+		function valid(){
+			var name = $("#name").val();
+			var password = $("#password").val();
+			var truePassword = $("#truePassword").val();
+			var mail = $("#Email").val();
+			var message = $("#message").val();
+			var i = 0;
+
+			if (name.length == 0){
+					$("#name").css("border-color","red");
+				} else {
+					i = i+1;
+					$("#name").css("border-color","green");
+				}
+				
+
+			if (password != truePassword || password.length == 0){
+					$("#password").css("border-color","red");
+					$("#truePassword").css("border-color","red");
+				} else {
+					$("#password").css("border-color","green");
+					$("#truePassword").css("border-color","green");
+					i = i+1;
+				}
+
+			if (mail.indexOf('@') == -1 || mail.length <= 1){
+				$("#Email").css("border-color","red");
+			} else {
+				$("#Email").css("border-color","green");
+				i = i+1;
+			}
+
+			if (message.length <=10 || message.length == 0){
+				$("#message").css("border-color","red");
+			} else {
+				$("#message").css("border-color","green");
+				i = i+1;
+			}
+			if (i == 4){
+				alert ("Сообщение отправлено");
+			} else{
+				alert ("Ошибка! Проверьте правильность введенных данных.");
+			}
+		}
+
+	</script>
+</head>
+<body>
+	<form>
+		<label>Ваше имя: </label>
+		<input type="text" name="name" id="name"></br></br>
+		<label>Пароль: </label>
+		<input type="password" name="password" id="password"></br></br>
+		<label>Подтверждение пароля: </label>
+		<input type="password" name="truePassword" id="truePassword"></br></br>
+		<label>Email: </label>
+		<input type="text" name="Email" id="Email"></br></br>
+		<label>Тема сообщения: </label>
+		<input type="text" name="theme" id="theme"></br></br>
+		<label>Сообщение: </label>
+		<input type="text" name="message" id="message"></br></br>
+		<input type="button" name="send" id="send" onclick="valid()" value="Отправить">
+		<input type="reset" name="clear" value="Очистить" >
+<a href="index.html">Список заданий</a>
+	</form>
+</body>
+</html>

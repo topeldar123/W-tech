@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Задание 3</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<style>
+body{
+	background-image: url(img/hockey.jpg);
+	background-size: 100%;
+}
+
+.picture{
+	position: absolute;
+	width: 150px;
+	top: 200px;
+	left: 600px;
+}
+.up{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+}
+.down{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+}
+.left{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+}
+.rigth{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+}
+</style>
+
+<script>
+function up(){
+	$("#pic").animate({top: "50px"});
+}
+
+function down(){
+	$("#pic").animate({top: "600px"});
+}
+
+function left(){
+	$("#pic").animate({left: "50px"});
+}
+
+function rigth(){
+	$("#pic").animate({left: "1200px"});
+}
+</script>
+
+</head>
+<body>
+	<img class="picture" src="img/ice_b.png" id="pic">
+	<input class="up" type="button" id="up" onclick="up()" value="Вверх" >
+	<input class="down" type="button" id="down" onclick="down()" value="Вниз">
+	<input class="left" type="button" id="left" onclick="left()" value="Лево">
+	<input class="rigth" type="button" id="rigth" onclick="rigth()" value="Право">
+<br><a href="index.html">Список заданий</a>
+</body>
+</html>

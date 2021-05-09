@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Задание 5</title>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<style>
+body{
+	background-size: 100%;
+}
+.ball{
+	width: 100px;
+	height: 100px;
+}
+</style>
+
+</head>
+<body>
+<img class="ball" src="img/ball.jfif" id="ball">
+
+<script>
+
+var img = document.getElementById("ball");
+
+img.onmousedown = function(e) {
+var coords = getCoords(img);
+var shiftX = e.pageX - coords.left;
+var shiftY = e.pageY - coords.top;
+img.style.position = 'absolute';
+document.body.appendChild(img);
+moveAt(e);
+img.style.zIndex = 1000;
+
+function moveAt(e) {
+img.style.left = e.pageX - shiftX + 'px';
+img.style.top = e.pageY - shiftY + 'px';
+}
+
+document.onmousemove = function(e) {
+moveAt(e);
+};
+
+img.onmouseup = function() {
+document.onmousemove = null;
+img.onmouseup = null;
+};
+}
+
+img.ondragstart = function() {
+return false;
+};
+
+function getCoords(elem) { 
+var box = elem.getBoundingClientRect();
+return {
+top: box.top + pageYOffset,
+left: box.left + pageXOffset
+};
+}
+</script> 
+
+<a href="index.html">Список заданий</a>
+</body>
+</html>
