@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+
+	<link rel="stylesheet" href="js/jquery-ui-1.12.1.custom/jquery-ui-1.12.1.custom/jquery-ui.css">
+	<link rel="stylesheet" href="style.css">
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script src="js/jquery-ui-1.12.1.custom/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+	<script src="js/script.js"></script>
+
+	<title>РПГ</title>
+</head>
+<body>
+	<header>
+		<div class="head_items">
+			
+		</div>
+	</header>
+	<main>
+			<div class="title">
+			<h3>Описание классов</h3>
+			</div>
+			<div class="main_items">
+		<div id="tabs">
+			<ul>
+				<li><a href="#tabs-1">Маг</a></li>
+				<li><a href="#tabs-2">Воин</a></li>
+				<li><a href="#tabs-3">Лучник</a></li>
+			</ul>
+		<div id="tabs-1">
+				<h2>Маг</h2>
+				<div class="img"><img src="img/wiz.gif" alt="Маг"></div>
+				<p>Если махать топором это не ваш стиль, если посылать во врагов тучи стрел это тоже не ваш стиль, если вы любитель разнообразия, сложности, замысловатости, то магия — ваш выбор.
+				<p>А нет лучше класса владеющего магией час Маг (Sorcerer). Их параметр магии можно развить до огромных значений, а благодаря заклинанию «Шит магии», когда повреждения от монстров идут не по жизням, а по магии — маг с прокаченной манной может посоревноваться в выносливости с войном.
+
+				<p>Стартовые характеристики мага:
+				<ul>
+				<li>Сила: 15</li>
+
+				<li>Ловкость: 15</li>
+
+				<li>Магия: 35</li>
+
+				<li>Живучесть: 20</li>
+
+				<li>Жизни: 30</li>
+
+				<li>Манна: 70</li>
+				</ul>
+			</div>
+
+			<div id="tabs-2">
+					<h2>Воин</h2>
+					<div class="img"><img src="img/war.gif" alt="Воин"></div>
+					<p>Если ближний бой — это ваше все, воин — ваш класс. В контактном бою с ним нет равных, его доспехи и живучесть позволяет ему выстаивать против тучи врагов, а огромная сила позволяет одним ударом отправлять на тот свет даже самых сильных демонов.
+					<p>Основной упор — сила и живучесть, магией войны обычно пренебрегают, считая ее уделом трусов. Храбрецы же всегда идут тараном на врага.
+					<p>Стартовые характеристики война:
+					<ul>
+					<li>Сила: 30</li>
+
+					<li>Ловкость: 20</li>
+
+					<li>Магия: 10</li>
+
+					<li>Живучесть: 25</li>
+
+					<li>Жизни: 70</li>
+
+					<li>Манна: 10</li>
+					</ul>
+			</div>
+
+			<div id="tabs-3">
+				<h2>Охотница</h2>
+					<div class="img"><img src="img/arch.gif" alt="Воин"></div>
+					<p>Охотница (Rogue) — мой любимый персонаж. Зажимаешь «Shift» и стреляешь в область предположительного нахождения врагов — и врагов можно убивать, даже не видя их. Стрел в игре нет. По этому охотница превращается в дешевую дистанционную ударную силу.
+
+					<p>Стартовые характеристики хотница:
+					<ul>
+					<li>Сила: 20</li>
+
+					<li>Ловкость: 30</li>
+
+					<li>Магия: 15</li>
+
+					<li>Живучесть: 20</li>
+
+					<li>Жизни: 45</li>
+
+					<li>Манна: 22</li>
+					</ul>
+			</div>
+		</div>
+
+		<div class="title">
+			<h3>Основные характеристики</h3>
+		</div>
+	<div class="container content" id="acc_con">
+	<div class="stage" id="accordion">
+		<h3>Сила</h3>
+		<div>
+		<p>Cила - определяет броню персонажа и увеличивает урон Варвара.
+		</div>
+
+		<h3>Ловкость</h3>
+		<div>
+		<p>Ловкость - увеличивает шанс увернуться от атаки и увеличивает урон Охотницы за демонами и Монаха. 
+		</div>
+
+		<h3>Интеллект</h3>
+		<div>
+		<p>Интеллект - увеличивает сопротивление урону и увеличивает урон Волшебницы и Колдуна.
+		</div>
+
+		<h3>Выносливость</h3>
+		<div>
+		<p>Выносливость - увеличивает количество жизни персонажа.
+		</div>
+		</div>
+		</div>
+
+		<div id="dialog" class="dialog" title="Создание персонажа">
+		<form class="form-inline">
+		<div class="form-group">
+		<label >Имя персонажа</label>
+		<input type="text" name="name" id="name">
+		<p>
+		<label for="height">Рост персонажа:</label>
+		<input type="text" name="height" id="height">
+		<p>
+		<div id="slider_height"></div>
+		<p>
+		<label for="weight">Вес персонажа:</label>
+		<input type="text" name="weight" id="weight">
+		<p>
+		<div id="slider_weight"></div>
+		<p>
+		<label for="body">Выберите телосложение:</label>
+		<input type="text" name="body" list="lst" id="body">
+		<datalist id="lst">
+		<option value="Худой">
+		<option value="Полный">
+		<option value="Накаченный">
+		</datalist>
+		<p>
+		<label for="date">Дата рождения персонажа: </label>
+		<input type="text" class="form-control" id="date">
+		<p>
+		<label for="cls">Выберите класс: </label>
+		<input type="text" class="form-control" id="cls">
+		<p>
+
+		<input type="text" id="ref"placeholder="Реферальный код"><span id="tip" title="Введите реферальный код, чтобы получить бонусы"> ?</span>
+		<p>
+		</div>
+		</form>
+		</div>
+		<button class="btn" id="create" >Создать персонажа</button>
+		</div>
+	</div>
+	</div>
+</main>
+
+<div id="conf" title="" title="Подтверждение" style="display: none;">
+
+			<label for="person_name">Имя персонажа: </label>
+			<input type="text" name="person_name" id="person_name">
+<br><br>
+			<label for="person_height">Рост персонажа: </label>
+			<input type="text" name="person_height" id="person_height">
+<br><br>
+			<label for="person_weight">Вес персонажа: </label>
+			<input type="text" name="person_weight" id="person_weight">
+<br><br>
+			<label for="person_body">Телосложение: </label>
+			<input type="text" name="person_body" id="person_body">
+<br><br>
+			<label for="person_date">Дата рождения: </label>
+			<input type="text" name="person_date" id="person_date">
+<br><br>
+			<label for="person_class">Класс персонажа: </label>
+			<input type="text" name="person_class" id="person_class">
+<br><br>
+			<label for="rating">Рейтинг силы персонажа: </label>
+			<input type="text" name="rating" id="rating">
+
+
+	</div>
+
+	<div id="ok" title="Уведомление" style="display: none;"><h2>Ваш персонаж создан!</h2></div>
+
+</body>
+</html>
